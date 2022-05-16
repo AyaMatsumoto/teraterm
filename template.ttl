@@ -1,0 +1,15 @@
+HOSTADDR = 'hostname' 
+USERNAME = 'username'
+PASSWORD = '********'
+ 
+;; ③SSH接続コマンド作成
+COMMAND = HOSTADDR 
+strconcat COMMAND ':2222 /ssh /2 /auth=password /user=' 
+strconcat COMMAND USERNAME 
+strconcat COMMAND ' /passwd=' 
+strconcat COMMAND PASSWORD
+ 
+;; ④サーバ接続
+connect COMMAND
+
+FULLPATH = 'teraterm.log'
